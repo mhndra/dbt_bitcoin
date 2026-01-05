@@ -11,8 +11,7 @@ models:
   - name: stg_btc_outputs_col
     tests:
       - dbt_utils.equal_rowcount:
-          arguments:
-            compare_model: ref('stg_btc_outputs_col_py')
+          compare_model: ref('stg_btc_outputs_col_py')
   
   - name: whale_alert
     latest_version: 2
