@@ -10,6 +10,7 @@ WITH whales AS (
 )
 
 SELECT 
+    '{{ invocation_id }}' AS invocation_id,
     w.outputs_address,
     w.total_sent,
     w.tx_count,

@@ -3,6 +3,7 @@
 WITH flattened_outputs AS (
 
     SELECT
+        '{{ invocation_id }}' AS invocation_id,
         sb.hash_key,
         sb.block_number,
         sb.block_timestamp,
