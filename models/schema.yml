@@ -11,14 +11,17 @@ models:
   - name: stg_btc_outputs_col
     tests:
       - dbt_utils.equal_rowcount:
-          compare_model: ref('stg_btc_outputs_col_py')
+          arguments:
+            compare_model: ref('stg_btc_outputs_col_py')
   
   - name: whale_alert
-    latest_version: 2
+    latest_version: 1
     config:
       contract:
         enforced: true
     columns:
+      - name: invocation_id
+        data_type: string
       - name: outputs_address
         data_type: string
         data_tests:
@@ -32,8 +35,8 @@ models:
     versions:
       - v: 1
         deprecation_date: 2026-02-01
-        config:
-          enabled: false
+        # config:
+        #   enabled: false
       # Matches what's above -- nothing more needed
       - v: 2
       # Removed a column -- this is the breaking change!

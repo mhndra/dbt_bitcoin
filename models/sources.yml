@@ -11,3 +11,9 @@ sources:
           freshness:
             warn_after: {count: 1, period: 'hour'}
             error_after: {count: 3, period: 'hour'}
+  
+  - name: customers
+    database: customers
+    schema: customers
+    tables:
+      - name: customer_status
